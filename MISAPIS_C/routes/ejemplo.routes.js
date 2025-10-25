@@ -1,49 +1,24 @@
 import { Router } from "express";
+import {
+
+    getAllEjemplos,
+    getEjemploById,
+    postEjemplo,
+    putEjemplo,
+    deleteEjemplo    
+
+} from '../controllers/ejemplo.controller.js';
+
 const ejemplo = Router();
 
-// GET ALL
-ejemplo.get('/', (req, res) => {
-  res.json({
-    msg: 'Obtener todos los registros',
-  });
-});
+ejemplo.get('/', getAllEjemplos);
 
-// GET ONE (con id)
-ejemplo.get('/:id', (req, res) => {
-  const { id } = req.params;
-  res.json({
-    msg: 'Obtener un registro por ID',
-    id,
-  });
-});
+ejemplo.get('/:id', getEjemploById);
 
-// POST
-ejemplo.post('/', (req, res) => {
-  const body = req.body;
-  res.json({
-    msg: 'Crear un nuevo registro',
-    body,
-  });
-});
+ejemplo.put('/:id', putEjemplo);
 
-// PUT
-ejemplo.put('/:id', (req, res) => {
-  const { id } = req.params;
-  const body = req.body;
-  res.json({
-    msg: 'Actualizar registro',
-    id,
-    body,
-  });
-});
+ejemplo.post('/', postEjemplo);
 
-// DELETE
-ejemplo.delete('/:id', (req, res) => {
-  const { id } = req.params;
-  res.json({
-    msg: 'Eliminar registro',
-    id,
-  });
-});
+ejemplo.delete('/:id', deleteEjemplo);
 
 export default ejemplo;
