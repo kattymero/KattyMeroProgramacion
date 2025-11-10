@@ -1,0 +1,47 @@
+body {
+    scroll-behavior: smooth;
+}
+
+.bg-verde {
+    background-color: #0b6623 !important;
+}
+
+.text-verde {
+    color: #0b6623 !important;
+}
+
+.inicio {
+    height: 100vh;
+    background: url('G1.jfif') center/cover no-repeat;
+    position: relative;
+}
+
+.inicio .overlay {
+    position: absolute;
+    inset: 0;
+    background-color: rgba(0, 100, 0, 0.6);
+}
+
+.inicio .contenido {
+    position: relative;
+    z-index: 2;
+}
+
+.btn-light:hover {
+    background-color: #198754;
+    color: white;
+}
+
+#tablaAsistencia {
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.card {
+    border: none;
+    transition: transform 0.2s;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+}
