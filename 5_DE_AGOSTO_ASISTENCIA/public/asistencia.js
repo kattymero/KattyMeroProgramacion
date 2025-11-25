@@ -19,7 +19,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     // Cargar datos
     async function cargarAsistencias() {
-        const res = await fetch("/api/Asistencia");
+        const res = await fetch("/5deAgosto/Asistencia");
         const data = await res.json();
         asistencias = data.asistencias || [];
 
@@ -59,7 +59,7 @@ document.addEventListener("DOMContentLoaded", () => {
         };
 
         if (modoEditar) {
-            await fetch(`/api/Asistencia/${idEditar}`, {
+            await fetch(`/5deAgosto/Asistencia/${idEditar}`, {
                 method: "PUT",
                 headers: { "Content-Type": "application/json" },
                 body: JSON.stringify(datos)
@@ -72,7 +72,7 @@ document.addEventListener("DOMContentLoaded", () => {
             btn.textContent = "Marcar Asistencia";
             btn.classList.replace("btn-primary", "btn-success");
         } else {
-            await fetch("/api/Asistencia", {
+            await fetch("/5deAgosto/Asistencia", {
                 method: "POST",
                 headers: { "Content-Type": "application/json" },
                 body: JSON.stringify(datos)
@@ -107,7 +107,7 @@ document.addEventListener("DOMContentLoaded", () => {
         const confirmar = confirm("¿Seguro que deseas eliminar esta asistencia?");
         if (!confirmar) return;
 
-        await fetch(`/api/Asistencia/${id}`, { method: "DELETE" });
+        await fetch(`/5deAgosto/Asistencia/${id}`, { method: "DELETE" });
         cargarAsistencias();
     }
 
